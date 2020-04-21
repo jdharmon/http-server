@@ -11,9 +11,10 @@
             "mode": "auto",
             "program": "${fileDirname}",
             "env": {
-                "LISTEN_PORT": "9000"
             },
-            "args": []
+            "args": [
+                "-port=9000"
+            ]
         }
     ]
 }
