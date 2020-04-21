@@ -1,3 +1,5 @@
+_output/
+
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json

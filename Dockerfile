@@ -1,8 +1,8 @@
 FROM golang:1.14 AS build
-WORKDIR /go/src/github.com/jdharmon/http-echo
+WORKDIR /app
 COPY * ./
-RUN go build
+RUN CGO_ENABLED=0 go build -o http-server
 
 FROM scratch
-COPY --from=build /go/src/github.com/jdharmon/http-echo /http-echo
-ENTRYPOINT [ "/http-echo" ]
+COPY --from=build /app/http-server /http-server
+ENTRYPOINT [ "/http-server" ]
